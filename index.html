@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>deploy-test // Areeb</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --panel: #11161d;
+    --line: #22292f;
+    --text: #c9d1d9;
+    --dim: #6e7681;
+    --green: #3fb950;
+    --amber: #d29922;
+    --blue: #58a6ff;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "SFMono-Regular", ui-monospace, Menlo, Consolas, monospace;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+
+  .console {
+    width: 100%;
+    max-width: 640px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+  }
+
+  .titlebar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: #161b22;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .dot.red { background: #ff5f56; }
+  .dot.yellow { background: #ffbd2e; }
+  .dot.green { background: #27c93f; }
+
+  .titlebar span {
+    margin-left: 8px;
+    color: var(--dim);
+    font-size: 13px;
+  }
+
+  .body {
+    padding: 20px 22px 26px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .line { white-space: pre-wrap; }
+  .prompt { color: var(--blue); }
+  .ok { color: var(--green); }
+  .warn { color: var(--amber); }
+  .dim { color: var(--dim); }
+
+  .cursor {
+    display: inline-block;
+    width: 8px;
+    height: 15px;
+    background: var(--text);
+    vertical-align: text-bottom;
+    margin-left: 4px;
+    animation: blink 1s steps(1) infinite;
+  }
+
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+
+  .status {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--line);
+    display: flex;
+    justify-content: space-between;
+    color: var(--dim);
+    font-size: 12px;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(63, 185, 80, 0.15);
+    color: var(--green);
+    border: 1px solid rgba(63, 185, 80, 0.4);
+  }
+
+  a { color: var(--blue); }
+
+  @media (max-width: 480px) {
+    .body { font-size: 13px; padding: 16px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="console">
+    <div class="titlebar">
+      <div class="dot red"></div>
+      <div class="dot yellow"></div>
+      <div class="dot green"></div>
+      <span>areeb@github-pages: ~/deploy-test</span>
+    </div>
+    <div class="body" id="log">
+      <div class="line"><span class="prompt">$</span> git push origin main</div>
+      <div class="line dim">Enumerating objects, packing, writing objects...</div>
+      <div class="line ok">✓ Pushed to GitHub</div>
+      <div class="line"><span class="prompt">$</span> pages build &amp; deploy</div>
+      <div class="line ok">✓ Build complete</div>
+      <div class="line ok">✓ Site is live</div>
+      <div class="line" style="margin-top:14px;">Hello, this page exists to confirm one thing:</div>
+      <div class="line" style="color:var(--text); font-weight:600;">if you can read this, your deployment worked.<span class="cursor"></span></div>
+
+      <div class="status">
+        <span>build <span class="badge">passing</span></span>
+        <span id="clock" class="dim"></span>
+      </div>
+    </div>
+  </div>
+
+<script>
+  function tick() {
+    const now = new Date();
+    document.getElementById('clock').textContent = now.toLocaleTimeString();
+  }
+  tick();
+  setInterval(tick, 1000);
+</script>
+
+</body>
+</html>
