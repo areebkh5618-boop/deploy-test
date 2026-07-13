@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptops</title>
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="laptop.html"><img src="1.png">Laptop Brands</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="laptop.html">Home</a></li>
+                <li class="account">
+                    <a href="#">Brands</a>
+                    <ul class="dropdown-menu">
+                        <li><a  href="hp laptops.html">HP</a></li>
+                        <li><a  href="macbook.html">Macbook</a></li>
+                        <li><a  href="dell laptops.html">Dell</a></li>
+                        <li><a  href="samsung.html">Samsung</a></li>
+                    </ul>
+                </li>
+                <li><a href="review.html">Reviews</a></li>
+                <li><a href="contact us page.html">Contact Us</a></li>
+                <li><a href="about us.html">About Us</a></li>
+                <li class="account">
+                    <a href="#">Account</a>
+                    <ul class="dropdown-menu">
+                        <li><a  href="login page.html">Sign In</a></li>
+                        <li><a  href="sign up page.html">Registration</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+<body>
+    <div class="container">
+        <h1>Checkout</h1>
+        <form action="process-order.html" method="POST">
+            <div class="form-section">
+                <h2>Personal Information</h2>
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+    
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+    
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-section">
+                <h2>Shipping Address</h2>
+                <label for="address">Address</label>
+                <textarea id="address" name="address" placeholder="Enter your shipping address" rows="4" required></textarea>   
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" placeholder="Enter your city" required>   
+                <label for="zip">ZIP/Postal Code</label>
+                <input type="number" id="zip" name="zip" placeholder="Enter your ZIP code" required>   
+                <label for="country">Country</label>
+                <select id="country" name="country" required>
+                    <option value="">Select your country</option>
+                    <option value="USA">United States</option>
+                    <option value="UK">United Kingdom</option>
+                    <option value="India">India</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Australia">Australia</option>
+                </select>
+            </div>
+            <div class="form-section">
+                <h2>Payment Information</h2>
+                <label for="card-name">Cardholder Name</label>
+                <input type="text" id="card-name" name="card-name" placeholder="Name on the card" required>    
+                <label for="card-number">Card Number</label>
+                <input type="number" id="card-number" name="card-number" placeholder="Enter your card number" required>    
+                <div class="row">
+                    <div class="column">
+                        <label for="expiry">Expiry Date</label>
+                        <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+                    </div>
+                    <div class="column">
+                        <label for="cvv">CVV</label>
+                        <input type="number" id="cvv" name="cvv" placeholder="CVV" required>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn">Place Order</button>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2024 Your Laptop Store. All rights reserved.</p>
+        <p>
+            <a href="about us.html">About Us</a> |
+            <a href="privacy policy.html">Privacy Policy</a> |
+            <a href="terms of services.html">Terms of Service</a>
+        </p>
+        <p>Contact Info: areebkh5618@gmail.com | +923265210997</p>
+    </footer>
+    <script>
+  document.querySelector("form").addEventListener("submit", function (event) {
+    event.preventDefault(); // Stop form from submitting normally
+
+    // Get form values
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const address = document.getElementById("address").value.trim();
+    const city = document.getElementById("city").value.trim();
+    const zip = document.getElementById("zip").value.trim();
+    const country = document.getElementById("country").value;
+    const cardName = document.getElementById("card-name").value.trim();
+    const cardNumber = document.getElementById("card-number").value.trim();
+    const expiry = document.getElementById("expiry").value.trim();
+    const cvv = document.getElementById("cvv").value.trim();
+
+    // Basic validation (you can expand this)
+    if (!name || !email || !phone || !address || !city || !zip || !country || !cardName || !cardNumber || !expiry || !cvv) {
+      alert("Please fill out all required fields.");
+      return;
+    }
+
+    // Simulate order processing
+    const button = document.querySelector("button[type='submit']");
+    button.disabled = true;
+    button.textContent = "Placing Order...";
+
+    setTimeout(() => {
+      alert("✅ Order placed successfully!");
+      button.disabled = false;
+      button.textContent = "Place Order";
+
+      // Optionally clear form
+      document.querySelector("form").reset();
+    }, 2000);
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,205 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+/* Header styles */
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.search-bar input {
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+}
+
+/* Hero section styles */
+.hero {
+    background: url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    padding: 10px 20px;
+    background: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.cta-button:hover {
+    background: #4cae4c;
+}
+
+/* Featured Brands styles */
+.featured-brands {
+    padding: 20px;
+    text-align: center;
+}
+
+.brand-logos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.brand-logos img {
+    width: 100px; /* Adjust size as necessary */
+}
+
+/* Latest Laptops styles */
+.latest-laptops {
+    padding: 20px;
+}
+
+.product-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    width: 200px; /* Fixed width for product cards */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+}
+
+.product-card h3 {
+    margin: 10px 0;
+}
+
+/* Latest Reviews styles */
+.latest-reviews {
+    padding: 20px;
+}
+
+.review-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.review-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    width: 200px; /* Fixed width for review cards */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Promotions styles */
+.promotions {
+    padding: 20px;
+}
+
+.promotion-banners {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.promotion-banner {
+    background: #ffcc00;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px; /* Fixed width for promotion banners */
+}
+
+/* Newsletter styles */
+.newsletter {
+    padding: 20px;
+    text-align: center;
+}
+
+.newsletter input[type="email"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 250px; /* Width for email input */
+}
+
+.newsletter button {
+    padding: 10px 15px;
+    background: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.newsletter button:hover {
+    background: #4cae4c;
+}
+
+/* Footer styles */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-links {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #fff;
+    margin: 0 10px;
+}

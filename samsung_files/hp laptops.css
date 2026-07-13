@@ -1,0 +1,208 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header {
+    position:relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 0 20px;
+    background-color: #0e0d0d;
+    color: #fff;
+    height: 80px;
+}
+
+header .logo {
+    display: flex;
+    align-items: center; /* Align text and image vertically */
+    gap: 10px; /* Space between logo image and text */
+}
+
+header .logo img {
+    max-height: 50px; /* Adjust size of the logo image */
+    width: auto;
+    object-fit: contain; /* Maintain aspect ratio while fitting the image */
+}
+
+header .logo a {
+    text-decoration: none;
+    color: white;
+    font-size: 25px; /* Adjust font size of logo text */
+    font-weight: bold; /* Make the logo text bold */
+    display: flex;
+    align-items: center; /* Center the text with the logo vertically */
+}
+header .logo a:hover {
+    color: #f80303; 
+}
+
+nav {
+    display: flex; /* Ensures items align horizontally */
+
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Spacing between navigation items */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    font-size: 16px; /* Adjust size of navigation items */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #fb0505; /* Highlight color on hover */
+}
+.account {
+    position: relative; /* Create a positioning context for the dropdown menu */
+    display: inline-block;
+}
+
+.account a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+}
+
+.account .dropdown-menu {
+    display: none; /* Hide dropdown menu by default */
+    position: absolute;
+    top: 100%; /* Position dropdown below the link */
+    left: 0;
+    background-color: gray;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+.account:hover .dropdown-menu {
+    display: block; /* Show dropdown menu on hover */
+}
+
+.dropdown-menu li {
+    list-style: none;
+    margin: 0;
+    padding: 5px 20px;
+}
+
+.dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.dropdown-menu li a:hover {
+    background-color: green; 
+    color: #fff;
+}   
+
+/* Main Content */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.product-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+}
+
+.product-card h3 {
+    font-size: 1.2em;
+    margin: 15px 0;
+}
+
+.product-card p {
+    font-size: 0.9em;
+    color: #555;
+    margin: 0 15px 10px;
+}
+
+.product-card .price {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #004f9e;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.product-card button {
+    background-color: #004f9e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.product-card button:hover {
+    background-color: #003b7c;
+}
+.footer p {
+    margin: 5px 0;
+    color: #faf7f7;
+}
+footer {
+    background-color: #0e0d0d;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+footer a {
+    color: #ff9900; /* Bright color for links */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make links bold */
+    margin: 0 10px; /* Add space between links */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
